@@ -1,4 +1,3 @@
-@@ -1,89 +0,0 @@
 #define MOTOR_A_a 3     //모터A의 +출력핀은 3번핀입니다
 #define MOTOR_A_b 11    //모터A의 -출력핀은 11번핀입니다
 #define MOTOR_B_a 5     //모터B의 +출력핀은 5번핀입니다
