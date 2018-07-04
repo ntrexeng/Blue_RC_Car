@@ -8,7 +8,7 @@
 #define ULTRASENS_T 13  //초음파센서 트리거 출력핀은 13번핀입니다.
 #define ULTRASENS_E 12  //초음파센서 에코 입력핀은 12번핀입니다.
 #define SERVO_PIN 9     //서보모터 제어용 출력핀은 9번핀 입니다.
-#define 90TURN  360     //제자리 90도 회전 Delay
+#define TURN90  360     //제자리 90도 회전 Delay
 
 Servo servo;           //서보 제어용 변수 선언
 
@@ -38,7 +38,7 @@ void setup()
 
 void loop()
 {
-  dodgewall_val();  //입력된 데이터에 따라 모터에 입력될 변수를 조정하는 함수
+  //dodgewall_val();  //입력된 데이터에 따라 모터에 입력될 변수를 조정하는 함수
   motor_drive();  //모터를 구동하는 함수
 }
 
@@ -82,7 +82,7 @@ void dodgewall_val() //입력된 데이터에 따라 모터에 입력될 변수�
       m_a_spd = MOTOR_SPEED;  //모터A의 속력값 조정
       m_b_spd = MOTOR_SPEED;  //모터B의 속력값 조정
       motor_drive();    //모터 회전상태 반영
-      delay(90TURN*2);  //뒤로 도는 시간 
+      delay(TURN90*2);  //뒤로 도는 시간 
     }
     else if(distance_r >= distance_l)  //오른쪽 거리가 왼쪽 거리 이상일 때 우회전
     {
@@ -91,7 +91,7 @@ void dodgewall_val() //입력된 데이터에 따라 모터에 입력될 변수�
       m_a_spd = MOTOR_SPEED;  //모터A의 속력값 조정
       m_b_spd = MOTOR_SPEED;  //모터B의 속력값 조정
       motor_drive();  //모터 회전상태 반영
-      delay(90TURN);  //90도 우회전 시간
+      delay(TURN90);  //90도 우회전 시간
     }
     else  //왼쪽 거리가 오른쪽 거리 초과일 때 좌회전
     {
@@ -100,7 +100,7 @@ void dodgewall_val() //입력된 데이터에 따라 모터에 입력될 변수�
       m_a_spd = MOTOR_SPEED;  //모터A의 속력값 조정
       m_b_spd = MOTOR_SPEED;  //모터B의 속력값 조정
       motor_drive();  //모터 회전상태 반영
-      delay(90TURN);  //90도 좌회전 시간
+      delay(TURN90);  //90도 좌회전 시간
     }
     m_a_dir = 0;    //모터A 역방향
     m_b_dir = 0;    //모터B 정방향
